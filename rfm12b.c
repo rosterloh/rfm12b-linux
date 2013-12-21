@@ -161,6 +161,11 @@ struct rfm12_data {
    u8                      retry_sending_running;
    wait_queue_head_t       wait_read;
    wait_queue_head_t       wait_write;
+
+// TX parameters
+   u16			tx_freq_off_12;
+   u8			tx_power_3;
+   u8			tx_bandwidth_4;
 };
 
 // forward declarations
@@ -1377,6 +1382,9 @@ rfm12_open(struct inode *inode, struct file *filp)
       rfm12->bit_rate = bit_rate;
       rfm12->jee_id = jee_id;
       rfm12->jee_autoack = jee_autoack;
+      rfm12->tx_freq_off_12 = 1905 /* 869.525 MHz */;
+      rfm12->tx_power_3 = 0b111 /* -17.5 dB off 27dBm (500mW) ~= 9 mW */;
+      rfm12->tx_bandwidth_4 = 0b0000 /* ~30 kHz */;
       
       if (0 == err)
           err = rfm12_setup(rfm12);
