@@ -116,6 +116,31 @@
 #define RFM12B_IOCTL_SET_JEEMODE_AUTOACK  _IOW(RFM12B_SPI_MAJOR, 10, int)
 
 /*
+   Set or read the frequency offset value (12 bit value, 96 <= x <= 3903).
+   (see http://www.hoperf.com/upload/rf/RFM12B.pdf, section 3: "Frequency
+   Setting Command" for details)
+*/
+#define RFM12B_IOCTL_GET_FREQUENCY_OFFSET _IOR(RFM12B_SPI_MAJOR, 11, int)
+#define RFM12B_IOCTL_SET_FREQUENCY_OFFSET _IOW(RFM12B_SPI_MAJOR, 12, int)
+
+/*
+   Set or read the transmit power (negative relative power, 3 bits,
+   in -2.5 dB steps).
+   (see http://www.hoperf.com/upload/rf/RFM12B.pdf, section 11: "TX
+   Configuration Control Command" for details)
+*/
+#define RFM12B_IOCTL_GET_TX_POWER _IOR(RFM12B_SPI_MAJOR, 13, int)
+#define RFM12B_IOCTL_SET_TX_POWER _IOW(RFM12B_SPI_MAJOR, 14, int)
+
+/*
+   Set or read the transmit bandwidth (4-bit value).
+   (see http://www.hoperf.com/upload/rf/RFM12B.pdf, section 11: "TX
+   Configuration Control Command" for details)
+*/
+#define RFM12B_IOCTL_GET_TX_BW _IOR(RFM12B_SPI_MAJOR, 15, int)
+#define RFM12B_IOCTL_SET_TX_BW _IOW(RFM12B_SPI_MAJOR, 16, int)
+
+/*
    Structure for driver statistics (see RFM12B_IOCTL_GET_STATS).
    
    All statistics are tracked since the when the device was opened
