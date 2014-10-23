@@ -48,6 +48,7 @@
 #include <signal.h>
 #include <errno.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 #include "../common/common.h"
 #include "../../rfm12b_config.h"

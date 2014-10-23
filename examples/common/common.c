@@ -19,6 +19,7 @@
 
 #include <fcntl.h>
 #include <stdio.h>
+#include <sys/ioctl.h>
 
 #include "common.h"
 #include "../../rfm12b_ioctl.h"

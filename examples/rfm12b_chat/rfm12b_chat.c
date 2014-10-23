@@ -41,6 +41,7 @@
 #include <errno.h>
 #include <unistd.h>
 #include <sys/select.h>
+#include <sys/ioctl.h>
 
 #include "../common/common.h"
 #include "../../rfm12b_config.h"
