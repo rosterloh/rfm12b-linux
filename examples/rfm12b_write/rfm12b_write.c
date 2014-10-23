@@ -68,7 +68,7 @@ void sig_handler(int signum)
 int main(int argc, char** argv)
 {
    int fd, len, i, ppos;
-   char* devname, buf[128];
+   char* devname;
    unsigned long pkt_cnt;
    time_t tt;
    unsigned char* bytes = (unsigned char*)malloc(PACKET_LEN);
